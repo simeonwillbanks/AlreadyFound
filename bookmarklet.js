@@ -1,0 +1,1 @@
+javascript:var deliciousUsername='simeonsdotnet';if(getSelection()!=''){q=getSelection();}else{void(q=prompt('Enter%20search%20term%20for%20Google%20and%20Delicious',''));}if(q){window.open('http://www.google.com/search?q='+escape(q),'_parent');window.open('http://delicious.com/search?p='+escape(q)+'&chk=&context=userposts%7C'+deliciousUsername+'&fr=del_icio_us&lc=1','_blank');}
