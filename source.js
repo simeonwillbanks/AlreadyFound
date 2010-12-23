@@ -1,18 +1,19 @@
-var q,d,g,s;
-duser='username';
-dwin='_blank';
-gwin='_parent';
-durl='http://delicious.com/search?p=%q&chk=&context=userposts%7C%u&fr=del_icio_us&lc=1';
-gurl='http://www.google.com/search?q=%q';
+var query,
+    selection,
+    google_url='http://www.google.com/search?q=%q';
+    google_win='_parent';
+    service_url='https://www.google.com/bookmarks/l#q=%q';
+    service_win='_blank';
+    service_name='Google Bookmarks';
 if(window.getSelection){
-  s=window.getSelection();
-  if(s.toString().length>0)
-    q=s;
+  selection=window.getSelection();
+  if(selection.toString().length>0)
+    query=selection;
 }
-if(!q)
-  void(q=prompt('Enter search term for Google and Delicious',''));
-if(q){
-  q=escape(q);
-  window.open(durl.replace('%q',q).replace('%u',duser),dwin);
-  window.open(gurl.replace('%q',q),gwin);
+if(!query)
+  void(query=prompt('Enter search term for Google and '+service_name,''));
+if(query){
+  query=escape(query);
+  window.open(google_url.replace('%q',query),google_win);
+  window.open(service_url.replace('%q',query),service_win);
 }
